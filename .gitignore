@@ -1,0 +1,6 @@
+/.idea/
+out/
+*.jar
+*.iml
+*.class
+/target/classes/Schema.txt
