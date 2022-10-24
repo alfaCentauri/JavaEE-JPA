@@ -1,9 +1,16 @@
 package com.alfaCentauri.data;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.sql.SQLException;
 import java.util.List;
 
+@Stateless
 public class PersonaDAO implements ITypeDAO{
+    @PersistenceContext(unitName="PersonaPU")
+    EntityManager em;
+
     @Override
     public int insertar(Object nuevo) throws SQLException {
         return 0;
@@ -11,7 +18,7 @@ public class PersonaDAO implements ITypeDAO{
 
     @Override
     public List listar() {
-        return null;
+        return em.createNamedQuery("Persona.findAll").getResultList();
     }
 
     @Override
