@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Stateless
-public class PersonaDAO implements ITypeDAO{
+public class PersonaDAO implements ITypeDAO, IPersonaDAO{
     @PersistenceContext(unitName="PersonaPU")
     EntityManager em;
 
@@ -48,6 +48,7 @@ public class PersonaDAO implements ITypeDAO{
         return em.find(Persona.class, objeto);
     }
 
+    @Override
     public Persona findPersonaByEmail(Persona persona) {
         Query query = em.createQuery("from Persona p where p.email =: email");
         query.setParameter("email", persona.getEmail());
