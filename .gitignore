@@ -3,6 +3,4 @@ out/
 *.jar
 *.iml
 *.class
-/target/classes/Schema.txt
-target/classes/log4j2.xml
-target/classes/
+target/
