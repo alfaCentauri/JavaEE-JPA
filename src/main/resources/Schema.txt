@@ -1,0 +1,15 @@
+create database javaTest;
+use javaTest;
+create table usuario(
+    id int auto_increment primary key,
+    usuario varchar(50) not null ,
+    password varchar(50) not null 
+);
+
+create table persona(
+    id_persona int auto_increment primary key,
+    nombre varchar(45) not null ,
+    apellido varchar(45) not null ,
+    email varchar(45) not null ,
+    telefono long
+);
