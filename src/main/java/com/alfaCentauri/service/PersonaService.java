@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import java.sql.SQLException;
 import java.util.List;
 
-public class PersonaService implements IPersonaService{
+public class PersonaService implements IPersonaService, IPersonaServiceRemote{
     @Inject
     private PersonaDAO personaDao;
     private Persona persona;
