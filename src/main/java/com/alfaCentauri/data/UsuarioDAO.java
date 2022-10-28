@@ -4,9 +4,7 @@ import com.alfaCentauri.domain.Usuario;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /****/
@@ -16,7 +14,8 @@ public class UsuarioDAO implements ITypeDAO{
 
     @Override
     public void insertar(Object nuevo) throws SQLException {
-
+        Usuario usuario = (Usuario) nuevo;
+        entityManager.persist(usuario);
     }
 
     @Override
