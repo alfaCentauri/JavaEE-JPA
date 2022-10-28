@@ -34,8 +34,8 @@ public class PersonaDAO implements ITypeDAO, IPersonaDAO{
     @Override
     public void eliminar(Object objeto) throws SQLException {
         Persona persona = (Persona) objeto;
-        entityManager.merge(persona);
-        entityManager.remove(persona);
+        var result = entityManager.merge(persona);
+        entityManager.remove(result);
     }
 
     @Override
