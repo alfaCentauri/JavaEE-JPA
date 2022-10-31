@@ -20,26 +20,28 @@ public class UsuarioDAO implements ITypeDAO{
 
     @Override
     public List listar() {
-        return null;
+        return entityManager.createNamedQuery("Usuario.findAll").getResultList();
     }
 
     @Override
     public void actualizar(Object objeto) throws SQLException {
-
+        Usuario usuario = (Usuario) objeto;
+        entityManager.merge(usuario);
     }
 
     @Override
     public void eliminar(Object objeto) throws SQLException {
-
+        Usuario usuario = (Usuario) objeto;
+        entityManager.remove( entityManager.merge(usuario) );
     }
 
     @Override
     public Object buscarPorId(int id) throws SQLException {
-        return null;
+        return entityManager.find(Usuario.class, id);
     }
 
     @Override
     public Object buscar(Object objeto) throws SQLException {
-        return null;
+        return entityManager.find(Usuario.class, objeto);
     }
 }
