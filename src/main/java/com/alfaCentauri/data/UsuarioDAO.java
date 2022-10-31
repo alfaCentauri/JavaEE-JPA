@@ -2,12 +2,14 @@ package com.alfaCentauri.data;
 
 import com.alfaCentauri.domain.Usuario;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.sql.SQLException;
 import java.util.List;
 
 /****/
+@Stateless
 public class UsuarioDAO implements ITypeDAO{
     @PersistenceContext(unitName="UsuarioPU")
     EntityManager entityManager;
