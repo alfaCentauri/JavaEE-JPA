@@ -1,10 +1,12 @@
 package com.alfaCentauri.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u ORDER BY u.id")
+        @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u ORDER BY u.id"),
+        @NamedQuery(name="Usuario.findByIdUsuario", query="SELECT u FROM Usuario u WHERE u.id = id")
 })
 @Table(name="usuarios")
 public class Usuario {
@@ -12,6 +14,8 @@ public class Usuario {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private String usuario;
+
+    @Size(max = 45)
     private String password;
 
     public Usuario() {
