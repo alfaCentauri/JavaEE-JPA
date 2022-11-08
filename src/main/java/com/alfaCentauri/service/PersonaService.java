@@ -12,6 +12,10 @@ public class PersonaService implements IPersonaService, IPersonaServiceRemote{
     private PersonaDAO personaDao;
     private Persona persona;
 
+    public PersonaService() {
+        personaDao = new PersonaDAO();
+    }
+
     /**
      * @return Return a list of persons.
      **/

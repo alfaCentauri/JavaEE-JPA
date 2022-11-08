@@ -12,12 +12,16 @@ public class UsuarioService implements IUsuarioService {
 
     private Usuario usuario;
 
+    public UsuarioService() {
+        usuarioDAO = new UsuarioDAO();
+    }
+
     /**
      * @return Return
      **/
     @Override
     public List<Object> listarUsuarios() {
-        return null;
+        return usuarioDAO.listar();
     }
 
     @Override
