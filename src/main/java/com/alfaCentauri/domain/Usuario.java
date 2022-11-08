@@ -2,6 +2,8 @@ package com.alfaCentauri.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @NamedQueries({
@@ -11,14 +13,21 @@ import javax.validation.constraints.Size;
         @NamedQuery(name = "Usuario.findByPassword", query = "SELECT u FROM Usuario u WHERE u.password = :password")
 })
 @Table(name="usuarios")
-public class Usuario {
+public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Basic(optional = false)
     private int id;
+
+    @Size(max = 100)
     private String usuario;
 
     @Size(max = 45)
     private String password;
+
+    @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Persona persona;
 
     public Usuario() {
     }
@@ -62,6 +71,27 @@ public class Usuario {
                 "id=" + id +
                 ", usuario='" + usuario + '\'' +
                 ", password='" + password + '\'' +
+                ", persona=" + persona + '\'' +
                 '}';
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public void setPersona(Persona persona) {
+        this.persona = persona;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usuario usuario1)) return false;
+        return id == usuario1.id && usuario.equals(usuario1.usuario) && password.equals(usuario1.password) && Objects.equals(persona, usuario1.persona);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, usuario, password, persona);
     }
 }
