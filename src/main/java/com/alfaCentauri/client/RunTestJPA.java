@@ -3,19 +3,21 @@ package com.alfaCentauri.client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 
 public abstract class RunTestJPA{
-    static Logger log = LogManager.getRootLogger();
+    protected static Logger logger = LogManager.getRootLogger();
 
-    EntityManagerFactory entityManagerFactory;
+    protected EntityManagerFactory entityManagerFactory;
 
-    EntityTransaction entityTransaction;
+    protected EntityManager entityManager;
+
+    protected EntityTransaction entityTransaction;
 
     /**
      * @param args Lista de argumentos.
      **/
-    abstract void main(String[] args);
+    public abstract void main(String[] args);
 }
