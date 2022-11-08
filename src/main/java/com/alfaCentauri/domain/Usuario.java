@@ -6,7 +6,9 @@ import javax.validation.constraints.Size;
 @Entity
 @NamedQueries({
         @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u ORDER BY u.id"),
-        @NamedQuery(name="Usuario.findByIdUsuario", query="SELECT u FROM Usuario u WHERE u.id = id")
+        @NamedQuery(name="Usuario.findByIdUsuario", query="SELECT u FROM Usuario u WHERE u.id = id"),
+        @NamedQuery(name = "Usuario.findByUsername", query = "SELECT u FROM Usuario u WHERE u.username = :username"),
+        @NamedQuery(name = "Usuario.findByPassword", query = "SELECT u FROM Usuario u WHERE u.password = :password")
 })
 @Table(name="usuarios")
 public class Usuario {
