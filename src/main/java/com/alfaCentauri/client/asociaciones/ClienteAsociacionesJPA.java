@@ -14,12 +14,9 @@ public class ClienteAsociacionesJPA extends RunTestJPA {
     public void main(String[] args) {
         this.entityManagerFactory = Persistence.createEntityManagerFactory("SgaPU");
         this.entityManager = this.entityManagerFactory.createEntityManager();
-        
         List<Persona> personas = this.entityManager.createNamedQuery("Persona.findAll").getResultList();
-        
         //cerramos la conexion
         this.entityManager.close();
-        
         //Imprimir los objetos de tipo persona
         for(Persona persona : personas){
             logger.debug("Persona:" + persona);
