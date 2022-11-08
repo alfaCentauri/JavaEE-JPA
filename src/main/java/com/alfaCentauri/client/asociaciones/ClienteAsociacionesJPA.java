@@ -3,17 +3,10 @@ package com.alfaCentauri.client.asociaciones;
 import com.alfaCentauri.client.RunTestJPA;
 import com.alfaCentauri.domain.Persona;
 import com.alfaCentauri.domain.Usuario;
-import mx.com.gm.sga.domain.Persona;
-import mx.com.gm.sga.domain.Usuario;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class ClienteAsociacionesJPA implements RunTestJPA {
+public class ClienteAsociacionesJPA extends RunTestJPA {
     /**
      * @param args Lista de argumentos.
      **/
