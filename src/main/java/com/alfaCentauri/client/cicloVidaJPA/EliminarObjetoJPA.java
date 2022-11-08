@@ -1,4 +1,4 @@
-package com.alfaCentauri.cicloVidaJPA;
+package com.alfaCentauri.client.cicloVidaJPA;
 
 import com.alfaCentauri.domain.Persona;
 import org.apache.logging.log4j.LogManager;
