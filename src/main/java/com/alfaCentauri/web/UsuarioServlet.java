@@ -19,7 +19,7 @@ public class UsuarioServlet extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        List<Object> usuarios = usuarioService.listarUsuarios();
+        List<Object> usuarios = usuarioService.listAll();
         System.out.println("usuarios:" + usuarios);
         request.setAttribute("usuarios", usuarios);
         request.getRequestDispatcher("/listadoUsuarios.jsp").forward(request, response);

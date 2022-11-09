@@ -20,27 +20,27 @@ public class UsuarioService implements IUsuarioService {
      * @return Return
      **/
     @Override
-    public List<Object> listarUsuarios() {
+    public List<Object> listAll() {
         return usuarioDAO.listar();
     }
 
     @Override
-    public Object encontrarObjectById(Object object) {
+    public Object findUserById(Object object) {
         return null;
     }
 
     @Override
-    public void registrarObject(Object nuevo) {
+    public void save(Object newObject) {
 
     }
 
     @Override
-    public void modificar(Object modificado) {
+    public void update(Object modificado) {
 
     }
 
     @Override
-    public void eliminar(Object toErase) {
+    public void delete(Object toErase) {
 
     }
 }

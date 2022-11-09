@@ -1,20 +1,27 @@
 package com.alfaCentauri.service;
 
-import com.alfaCentauri.domain.Usuario;
-
 import java.util.List;
 
 public interface IUsuarioService {
     /**
      * @return Return a list of object's.
      **/
-    public List<Object> listarUsuarios();
+    public List<Object> listAll();
 
-    public Object encontrarObjectById(Object object);
+    /**
+     * Find a user by id.
+     * @param object Type Object.
+     * @return Return object with user or null.
+     */
+    public Object findUserById(Object object);
 
-    public void registrarObject(Object nuevo);
+    /**
+     * Save a user.
+     * @param newObject Type Object.
+     */
+    public void save(Object newObject);
 
-    public void modificar(Object modificado);
+    public void update(Object modificado);
 
-    public void eliminar(Object toErase);
+    public void delete(Object toErase);
 }
