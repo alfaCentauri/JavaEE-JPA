@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IUsuarioService {
     /**
-     * @return Return
+     * @return Return a list of object's.
      **/
     public List<Object> listarUsuarios();
 
