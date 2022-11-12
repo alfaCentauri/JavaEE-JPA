@@ -1,6 +1,6 @@
 create database javaTest;
 use javaTest;
-create table usuario(
+create table usuarios(
     id int auto_increment primary key,
     usuario varchar(50) not null ,
     password varchar(50) not null 
